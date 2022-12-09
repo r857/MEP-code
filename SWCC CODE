@@ -1,0 +1,53 @@
+;RAKSHANDA SHOWKAT
+;SWCC ESTIMATION
+
+#include <math.h>
+#include <stdio.h>
+
+void mepx(double *x /*inputs*/, double *outputs)
+{
+  double prg[21];
+  prg[0] = x[1];
+  prg[1] = prg[0] + prg[0];
+  prg[2] = x[3];
+  prg[3] = prg[1] / prg[2];
+  prg[4] = prg[1] + prg[3];
+  prg[5] = prg[4] + prg[3];
+  prg[6] = x[5];
+  prg[7] = prg[2] * prg[5];
+  prg[8] = prg[6] + prg[5];
+  prg[9] = x[0];
+  prg[10] = prg[9] + prg[7];
+  prg[11] = prg[3] / prg[8];
+  prg[12] = x[0];
+  prg[13] = sqrt(prg[0]);
+  prg[14] = prg[0] / prg[10];
+  prg[15] = prg[12] + prg[1];
+  prg[16] = x[2];
+  prg[17] = prg[16] / prg[15];
+  prg[18] = prg[11] + prg[14];
+  prg[19] = prg[17] / prg[13];
+  prg[20] = prg[18] + prg[19];
+
+  outputs[0] = prg[20];
+}
+
+int main(void)
+{
+
+//example of utilization ...
+
+  double x[6];
+  x[0] = 78.330000;
+  x[1] = 18.870000;
+  x[2] = 3.000000;
+  x[3] = 1.640000;
+  x[4] = 0.394000;
+  x[5] = 0.000000;
+
+  double outputs[1];
+
+  mepx(x, outputs);
+  printf("%lf", outputs[0]);
+  getchar();
+}
